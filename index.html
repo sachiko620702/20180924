@@ -50,11 +50,13 @@ th:nth-child(3) {
 <h3 class="vue-title">恭儀小組9/24烤肉店家投票</h3>
 
 <div id="app">
-  <v-client-table :columns="columns" :data="list" :options="options">
-    <input slot="select" type="radio" name="shop" value="props.row.name">
-    <a slot="address" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address"></a>
-    <a v-if="props.row.website != ''" slot="website" slot-scope="props" target="_blank" :href=" props.row.website " class="glyphicon glyphicon-eye-open"></a>
-  </v-client-table>
+  <form>
+    <v-client-table :columns="columns" :data="list" :options="options">
+      <input slot="select" type="radio" name="shop" value="props.row.name">
+      <a slot="address" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address"></a>
+      <a v-if="props.row.website != ''" slot="website" slot-scope="props" target="_blank" :href=" props.row.website " class="glyphicon glyphicon-eye-open"></a>
+    </v-client-table>
+  </form>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.8/vue.min.js"></script>
