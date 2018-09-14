@@ -1,4 +1,3 @@
-{
-  "logmasterv3":{"name":"LogMaster V3 使用手冊", "fooder": "logmaster_gitbook","type": "gitbook", "git":"ssh://git@dev.billows.com.tw:10022/document/logmaster_gitbook.git"},
-  "logmaster_api":{"name":"LogMaster API", "fooder": "lm_api","type": "api blueprint", "git":""}
-}
+[
+  {'name':'馬太郎', 'address':'台北市中山區中山北路1段81號', 'price':'699 / 899 + 10%', 'consumption_patterns':'吃到飽', 'website':'https://www.facebook.com/taiwanumataro/'}
+]
