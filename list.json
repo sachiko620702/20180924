@@ -1,3 +1,5 @@
 [
-  {"name":"馬太郎", "address":"台北市中山區中山北路1段81號", "price":"699 / 899 + 10%", "consumption_patterns":"吃到飽", "website":"https://www.facebook.com/taiwanumataro/"}
+  {"name":"馬太郎", "address":"台北市中山區中山北路1段81號", "price":"699 / 899 + 10%", "consumption_patterns":"吃到飽", "website":"https://www.facebook.com/taiwanumataro/"},
+  {"name":"燒桶子", "address":"台北市大安區延吉街99號", "price":"600~800 + 10%", "consumption_patterns":"單點 / 套餐", "website":"https://www.facebook.com/bucketbbq"},
+  {"name":"牛角燒肉", "address":"台北市大安區忠孝東路四段177號2樓", "price":"699 + 10%", "consumption_patterns":"單點 / 套餐／吃到飽", "website":"http://www.gyu-kaku.com.tw/"}
 ]
