@@ -45,6 +45,7 @@ th:nth-child{
 <h3 class="vue-title">恭儀小組9/24烤肉店家投票</h3>
 
 <div id="app">
+  如何稱呼？<input type="text" id="userName" size="6">
   <form>
     <v-client-table :columns="columns" :data="list" :options="options">
       <!-- <input slot="select" slot-scope="props" type="radio" name="shop" :value="props.row.name"> -->
@@ -89,5 +90,32 @@ new Vue({
 })
 function send(shop){
   console.log(shop);
+}
+function send(shop){
+  var status = true;
+  var name = $("#userName").val();
+
+  if(shop == '' || name == ''){
+    status = false;
+  }
+  
+  var data = { 
+    'name' : name,
+    'shop':shop
+  };
+
+  if(status){
+    $.ajax({
+      method: 'get',
+      url: "https://script.google.com/macros/s/AKfycbyvfYhlFmNLR734JWC5g1klNzIOVVj0OHbGsDGWWFDK8Cka3us/exec",
+      data: data,
+      type: "get",
+      dataType: "JSON",
+      success: function (response) {
+        console.log(response);
+        location.reload();
+      }
+    });
+  }
 }
 </script>
