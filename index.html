@@ -80,11 +80,10 @@ new Vue({
     }
   },
   created(){
-	    console.log(this.list)
 	    axios.get('./list.json',{params:{id: new Date().valueOf()}})
             .then((response) => {
               this.list = response.data;
-              console.log(this.list);
+              // console.log(this.list);
             });
   }
 })
