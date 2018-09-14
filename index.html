@@ -47,7 +47,8 @@ th:nth-child{
 <div id="app">
   <form>
     <v-client-table :columns="columns" :data="list" :options="options">
-      <input slot="select" slot-scope="props" type="radio" name="shop" :value="props.row.name">
+      <!-- <input slot="select" slot-scope="props" type="radio" name="shop" :value="props.row.name"> -->
+      <input slot="select" slot-scope="props" type="button" :onClick="'send('+props.row.name+')'" >
       <a slot="name" slot-scope="props" target="_blank" :href="props.row.website">{{props.row.name}}</a>
       <a slot="address" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address">{{props.row.address}}</a>
     </v-client-table>
@@ -73,10 +74,8 @@ new Vue({
         address: '地址(GMAP)',
         price: '價位',
         consumption_patterns: '消費方式'
-        // website: '官網'
       },
       sortable: ['name'],
-      // filterable: ['name']
       filterable: false
     }
   },
@@ -89,4 +88,7 @@ new Vue({
             });
   }
 })
+function send(shop){
+  console.log(shop);
+}
 </script>
