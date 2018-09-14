@@ -1,0 +1,93 @@
+<title>恭儀小組9/24烤肉店家投票</title>
+<meta charset="UTF-8" />
+<style>
+#app {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.VuePagination {
+  text-align: center;
+}
+
+.vue-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.vue-pagination-ad {
+  text-align: center;
+}
+
+.glyphicon.glyphicon-eye-open {
+  width: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+th:nth-child(3) {
+  text-align: center;
+}
+
+.VueTables__child-row-toggler {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.VueTables__child-row-toggler--closed::before {
+  content: "+";
+}
+
+.VueTables__child-row-toggler--open::before {
+  content: "-";
+}
+
+</style>
+<h3 class="vue-title">恭儀小組9/24烤肉店家投票</h3>
+
+<div id="app">
+  <v-client-table :columns="columns" :data="list" :options="options">
+    <a slot="gmap" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address" class="glyphicon glyphicon-eye-open"></a>
+    <a v-if="props.row.website != ''" slot="website" slot-scope="props" target="_blank" :href=" props.row.website " class="glyphicon glyphicon-eye-open"></a>
+  </v-client-table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.8/vue.min.js"></script>
+<script src="https://rawgit.com/matfish2/vue-tables-2/master/dist/vue-tables-2.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script>
+Vue.use(VueTables.ClientTable);
+
+new Vue({
+  el: "#app",
+  data: {
+    columns: ['name', 'address', 'gmap', 'price', 'consumption_patterns', 'website'],
+    list: [],
+    options: {
+      headings: {
+        name: '店名',
+        address: '地址',
+        gmap: 'GMAP',
+        price: '價位',
+        consumption_patterns: '消費方式',
+        website: '官方網站'
+      },
+      sortable: ['name'],
+      filterable: ['name']
+    }
+  },
+  created(){
+	    console.log(this.list)
+	    axios.get('./list.json',{params:{id: new Date().valueOf()}})
+            .then((response) => {
+              this.list = response.data;
+              console.log(this.list);
+            });
+  }
+})
+</script>

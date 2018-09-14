@@ -1,0 +1,4 @@
+{
+  "logmasterv3":{"name":"LogMaster V3 使用手冊", "fooder": "logmaster_gitbook","type": "gitbook", "git":"ssh://git@dev.billows.com.tw:10022/document/logmaster_gitbook.git"},
+  "logmaster_api":{"name":"LogMaster API", "fooder": "lm_api","type": "api blueprint", "git":""}
+}
