@@ -51,6 +51,7 @@ th:nth-child(3) {
 
 <div id="app">
   <v-client-table :columns="columns" :data="list" :options="options">
+    <input slot="select" type="radio" name="shop" value="props.row.name">
     <a slot="address" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address"></a>
     <a v-if="props.row.website != ''" slot="website" slot-scope="props" target="_blank" :href=" props.row.website " class="glyphicon glyphicon-eye-open"></a>
   </v-client-table>
@@ -66,10 +67,11 @@ Vue.use(VueTables.ClientTable);
 new Vue({
   el: "#app",
   data: {
-    columns: ['name', 'address', 'price', 'consumption_patterns', 'website'],
+    columns: ['select', 'name', 'address', 'price', 'consumption_patterns', 'website'],
     list: [],
     options: {
       headings: {
+        select: '我選它',
         name: '店名',
         address: '地址(GMAP)',
         price: '價位',
