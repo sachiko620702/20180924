@@ -50,7 +50,6 @@ th:nth-child{
       <input slot="select" slot-scope="props" type="radio" name="shop" :value="props.row.name">
       <a slot="name" slot-scope="props" target="_blank" :href="props.row.website">{{props.row.name}}</a>
       <a slot="address" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address">{{props.row.address}}</a>
-      <a v-if="props.row.website != ''" slot="website" slot-scope="props" target="_blank" :href=" props.row.website " class="glyphicon glyphicon-eye-open"></a>
     </v-client-table>
   </form>
 </div>
@@ -69,7 +68,7 @@ new Vue({
     list: [],
     options: {
       headings: {
-        select: '我選它',
+        select: '',
         name: '店名(官網)',
         address: '地址(GMAP)',
         price: '價位',
@@ -77,7 +76,8 @@ new Vue({
         // website: '官網'
       },
       sortable: ['name'],
-      filterable: ['name']
+      // filterable: ['name']
+      filterable: false
     }
   },
   created(){
