@@ -52,7 +52,7 @@ th:nth-child(3) {
 <div id="app">
   <form>
     <v-client-table :columns="columns" :data="list" :options="options">
-      <input slot="select" slot-scope="props" type="radio" name="shop" value="{{props.row.name}}">
+      <input slot="select" slot-scope="props" type="radio" name="shop" v-bind:value="{{props.row.name}}">
       <a slot="address" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address">{{props.row.address}}</a>
       <a v-if="props.row.website != ''" slot="website" slot-scope="props" target="_blank" :href=" props.row.website " class="glyphicon glyphicon-eye-open"></a>
     </v-client-table>
