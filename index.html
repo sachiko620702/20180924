@@ -48,7 +48,7 @@ th:nth-child{
   <form>
     <v-client-table :columns="columns" :data="list" :options="options">
       <!-- <input slot="select" slot-scope="props" type="radio" name="shop" :value="props.row.name"> -->
-      <input slot="select" slot-scope="props" type="button" :onClick="'send('+props.row.name+')'" >
+      <input slot="select" slot-scope="props" type="button" :onClick="'send(\''+props.row.name+'\')'" >
       <a slot="name" slot-scope="props" target="_blank" :href="props.row.website">{{props.row.name}}</a>
       <a slot="address" slot-scope="props" target="_blank" :href="'http://maps.google.com.tw/maps?q=' + props.row.address">{{props.row.address}}</a>
     </v-client-table>
